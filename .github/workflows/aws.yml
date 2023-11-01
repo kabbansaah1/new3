@@ -36,18 +36,12 @@ jobs:
       uses: actions/setup-node@v3
       with:
         node-version: 15 
-        path: codebase/rdicidr-0.1.0
 
     - name: Install NPM dependencies
-      run: npm install 
       working-directory: codebase/rdicidr-0.1.0
-
-    - name: Build project assets
-      run: npm run build
-      working-directory: codebase/rdicidr-0.1.0
-
-      #- name: Build
-      #  run: npm run build
+      run: |
+        npm install 
+        npm run test
 
     - name: Configure AWS credentials
       uses: aws-actions/configure-aws-credentials@v2
