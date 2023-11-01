@@ -36,6 +36,7 @@ jobs:
       uses: actions/setup-node@v3
       with:
         node-version: 15 
+        path: codebase/rdicidr-0.1.0
 
     - name: Install NPM dependencies
       run: npm install 
